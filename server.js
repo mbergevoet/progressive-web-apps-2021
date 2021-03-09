@@ -10,7 +10,7 @@ const swFilmsUrl = "https://swapi.dev/api/films";
 const detailUrl = "https://swapi.dev/api/films/";
 const movieIdFix = [0, 4, 5, 6, 1, 2, 3];
 
-
+const { getDetailData } = require('./static/scripts/api.js');
 
 // Middleware
 app.use(express.static(`${__dirname}/static`));
@@ -37,41 +37,26 @@ app.get('/films/:id', (req, res) => {
     // console.log(detailUrl + movieIdFix[req.params.id]);
     fetch(detailUrl + movieIdFix[req.params.id])
         .then((response) => {
+            // console.log(response);
             const swApiResponse = response.json();
+            console.log(swApiResponse);
             return swApiResponse;
         })
         .then((swData) => {
-            const detailEndpoints = [swData.characters, swData.planets, swData.starships];
-            getDetailData(detailEndpoints);
+            // const detailEndpoints = [swData.characters, swData.planets, swData.starships];
+            const characters = swData.characters;
+            // const planets = swData.planets;
+            // const starships = swData.starships;
+            return getDetailData(characters);
         })
-        .then((allEndpoints) => {
-            console.log(allEndpoints);
-            // res.render('pages/detail.ejs', { data: allEndpoints });
+        .then((response) => {
+            console.log(response)
         })
+    // .then((allEndpoints) => {
+    //     console.log(allEndpoints);
+    //     res.render('pages/detail.ejs', { data: allEndpoints });
+    // })
 });
-
-// Helper functions
-function getDetailData(allEndpoints) {
-    const resultArray = allEndpoints.map(singleEndpoint => {
-        return singleEndpoint.forEach(endpoint => {
-            fetch(endpoint)
-                .then(response => {
-                    let responseData = response.json()
-                    responseData.then(result => {
-                        if (result.height) {
-                            displayCharacters(result);
-                        } else if (result.model) {
-                            displayStarships(result);
-                        } else {
-                            displayPlanets(result);
-                        }
-                    });
-                });
-        });
-    });
-    console.log(resultArray);
-    return resultArray;
-};
 
 app.listen(port, function () {
     console.log(`Server listening at http://localhost:${port}`);
