@@ -5,12 +5,12 @@
 
 @font-face {
 	font-family: 'CrawlTitle';
-	src: url('../media/fonts/SWCrawlTitle.ttf');
+	src: url('../fonts/SWCrawlTitle.ttf');
 }
 
 @font-face {
 	font-family: 'CrawlBody';
-	src: url('../media/fonts/SWCrawlBody.ttf');
+	src: url('../fonts/SWCrawlBody.ttf');
 }
 
 :root {
@@ -33,7 +33,7 @@ header {
 	height: auto;
 	width: 100vw;
 	background-color: var(--secondary);
-	background-image: url(../media/images/starsbackgroundtransparent.png);
+	background-image: url(../images/starsbackgroundtransparent.png);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -94,11 +94,12 @@ header nav ul li a:hover {
 }
 
 body {
-	background-color: #1d1f20;
+	background-color: black;
 }
 
 #starWarsFilms {
-	margin: 5vh 10vw 0;
+	background-color: #1d1f20;
+	padding: 10vh 10vw 20vh;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -274,6 +275,18 @@ body {
 	top: 110%;
 	left: 0;
 	background: #217dba;
+}
+
+
+footer {
+	background: black;
+	color: #999999;
+	display: flex;
+	justify-content: center;
+}
+
+footer p {
+	margin: 2em 0;
 }
 
 .hide {

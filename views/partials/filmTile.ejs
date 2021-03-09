@@ -1,10 +1,12 @@
-<a href="/films/:id">
-    <article>
-        <h1>
-            <%= data[index].title %>
-        </h1>
-        <p>
-            <%= data[index].opening_crawl %>
-        </p>
-    </article>
-</a>
+<% for (var index=0; index < data.length; index++) { %>
+    <a href="/films/">
+        <article>
+            <h1>
+                <%= data[index].title %>
+            </h1>
+            <p>
+                <%= data[index].opening_crawl %>
+            </p>
+        </article>
+    </a>
+    <% } %>
