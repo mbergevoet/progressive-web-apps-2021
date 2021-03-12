@@ -94,15 +94,29 @@ Each catogory has specific attributes. Because that's a really long list I'll re
 
 ## :electric_plug: Installation
 
-Open your terminal or git client
+Go to the right directory:
 
-> cd yourDirectory
+```
+cd yourDirectory
+```
 
-> git clone https://github.com/mbergevoet/web-app-from-scratch-2021.git
+Clone repo:
 
-Once cloned type this in the terminal
+```
+git clone https://github.com/mbergevoet/web-app-from-scratch-2021.git
+```
 
-> npm run dev
+Once cloned:
+
+```
+npm install
+```
+
+Once all dependencies are installed:
+
+```
+npm run dev
+```
 
 ## :bookmark_tabs: License
 
