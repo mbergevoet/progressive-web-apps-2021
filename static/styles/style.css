@@ -15,6 +15,7 @@
 
 :root {
 	--dropshadow: drop-shadow(1px 4px 4px rgb(36, 36, 209));
+	--holoblue: #217dba;
 }
 
 * {
@@ -97,6 +98,13 @@ body {
 	background-color: black;
 }
 
+main > h1 {
+	color: var(--holoblue);
+	filter: var(--dropshadow);
+	font-size: 3em;
+	margin: 1em 10%;
+}
+
 #starWarsFilms {
 	background-color: #1d1f20;
 	padding: 10vh 10vw 20vh;
@@ -153,7 +161,6 @@ body {
 	font-family: 'CrawlBody', sans-serif;
 	font-size: 1rem;
 	font-weight: bold;
-	text-align: left;
 	line-height: 2rem;
 	text-align: justify;
 }
@@ -225,7 +232,7 @@ body {
 #starWarsCharacters article h2,
 #starWarsStarships article h2,
 #starWarsPlanets article h2 {
-	color: #217dba;
+	color: var(--holoblue);
 	width: 100%;
 	text-align: center;
 	font-style: italic;
@@ -248,15 +255,15 @@ body {
 #starWarsPlanets article div {
 	display: block;
 	margin: 0 auto;
-	width: 80%;
+	width: 95%;
 }
 
 #starWarsCharacters article p,
 #starWarsStarships article p,
 #starWarsPlanets article p {
-	margin: 0.5em 0;
+	margin: 1em 0;
 	width: 80%;
-	color: #217dba;
+	color: var(--holoblue);
 	font-size: 1.3em;
 	font-style: italic;
 	font-weight: bold;
@@ -269,12 +276,18 @@ body {
 #starWarsStarships article p::after,
 #starWarsPlanets article p::after {
 	content: '';
-	width: 60%;
+	width: 70%;
 	height: 3px;
 	position: absolute;
 	top: 110%;
 	left: 0;
-	background: #217dba;
+	background: var(--holoblue);
+}
+
+#starWarsCharacters article p span,
+#starWarsStarships article p span,
+#starWarsPlanets article p span{
+	font-size: 1.1em;
 }
 
 

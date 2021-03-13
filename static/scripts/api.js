@@ -23,16 +23,27 @@ const fetch = require('node-fetch');
 // };
 
 async function getDetailData(allEndpoints) {
-    console.log(allEndpoints)
-    let resultArray = [];
-    await allEndpoints.forEach(async singleEndpoint => {
-        let dataResponse = await fetch(singleEndpoint)
-        const jsonData = dataResponse.json()
-        resultArray.push(jsonData);
-        // console.log(result)
-    })
-    // console.log(resultArray);
-    console.log("regel 34", resultArray);
+    return Promise.all(
+        await allEndpoints.map(async singleEndpoint => {
+            let dataResponse = await fetch(singleEndpoint)
+            return jsonData = await dataResponse.json()
+        })
+    )
 };
 
+// async function getDetailData(allEndpoints) {
+//     console.log(allEndpoints)
+//     let resultArray = [];
+//     await allEndpoints.forEach(async singleEndpoint => {
+//         let dataResponse = await fetch(singleEndpoint)
+//         const jsonData = dataResponse.json()
+//         resultArray.push(jsonData);
+//         // console.log(result)
+//     })
+//     // console.log(resultArray);
+//     console.log("regel 34", resultArray);
+// };
+
 module.exports = { getDetailData };
+
+// Array combiner function

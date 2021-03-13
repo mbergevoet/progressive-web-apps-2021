@@ -34,28 +34,29 @@ app.get('/', (req, res) => {
 
 // Detail Route
 app.get('/films/:id', (req, res) => {
-    // console.log(detailUrl + movieIdFix[req.params.id]);
     fetch(detailUrl + movieIdFix[req.params.id])
         .then((response) => {
-            // console.log(response);
             const swApiResponse = response.json();
             console.log(swApiResponse);
             return swApiResponse;
         })
         .then((swData) => {
-            // const detailEndpoints = [swData.characters, swData.planets, swData.starships];
             const characters = swData.characters;
-            // const planets = swData.planets;
-            // const starships = swData.starships;
-            return getDetailData(characters);
+            const planets = swData.planets;
+            const starships = swData.starships;
+
+            async function test() {
+                let characterResponse = await getDetailData(characters);
+                // let planetResponse = await getDetailData(planets);
+                // let starshipResponse = await getDetailData(starships);
+                return characterResponse;
+            }
+            return test();
         })
-        .then((response) => {
-            console.log(response)
+        .then((characterData) => {
+            console.log(characterData);
+            // res.render('pages/detail.ejs', { data: characterData });
         })
-    // .then((allEndpoints) => {
-    //     console.log(allEndpoints);
-    //     res.render('pages/detail.ejs', { data: allEndpoints });
-    // })
 });
 
 app.listen(port, function () {

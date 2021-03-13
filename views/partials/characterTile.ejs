@@ -1,26 +1,40 @@
-<article>
-    <h2>
-        <%= data.name %>
-    </h2>
-    <img src="../../static/images/character-icon.png" alt="placeholder icon">
-    <div>
-        <p>
-            <%= data.height %>
-        </p>
-        <p>
-            <%= data.gender %>
-        </p>
-        <p>
-            <%= data.eye_color %>
-        </p>
-        <p>
-            <%= data.hair_color %>
-        </p>
-        <p>
-            <%= data.birth_year %>
-        </p>
-        <p>
-            <%= data.mass %>
-        </p>
-    </div>
-</article>
+<% for (var index=0; index < data.length; index++) { %>
+    <article>
+        <h2>
+            <%= data[index].name %>
+        </h2>
+        <img src="/images/character-icon.png" alt="placeholder icon">
+        <div>
+            <p>
+                Height: <span>
+                    -=<%= data[index].height %>=-
+                </span>
+            </p>
+            <p>
+                Gender: <span>
+                    -=<%= data[index].gender %>=-
+                </span>
+            </p>
+            <p>
+                Eye Color: <span>
+                    -=<%= data[index].eye_color %>=-
+                </span>
+            </p>
+            <p>
+                Hair Color: <span>
+                    -=<%= data[index].hair_color %>=-
+                </span>
+            </p>
+            <p>
+                Year of Birth: <span>
+                    -=<%= data[index].birth_year %>=-
+                </span>
+            </p>
+            <p>
+                Weight: <span>
+                    -=<%= data[index].mass %>=-
+                </span>
+            </p>
+        </div>
+    </article>
+    <% } %>
