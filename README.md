@@ -21,6 +21,53 @@ In this course I will convert the client side web application I made previously 
 
 [Link to live Demo](mbergevoet.github.io/progressive-web-apps-2021/)
 
+## :electric_plug: Installation
+
+Go to the right directory:
+
+```
+cd yourDirectory
+```
+
+Clone repo:
+
+```
+git clone https://github.com/mbergevoet/web-app-from-scratch-2021.git
+```
+
+Once cloned:
+
+```
+npm install
+```
+
+Once all dependencies are installed:
+
+```
+npm run dev
+```
+
+## npm scripts
+
+These are commands you type in the commandline to make specific parts of the code trigger
+```
+npm start
+```
+```
+npm run dev
+```
+
+## npm packages
+
+**[express](https://www.npmjs.com/package/express)** <br>
+Fast, unopinionated, minimalist web framework for node.
+
+**[nodemon](https://www.npmjs.com/package/nodemon)** <br>
+nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+**[node-fetch](https://www.npmjs.com/package/node-fetch)** <br>
+This light-weight module brings `window.fetch` to Node.js
+
 ## :fax: About the API
 
 For this course I'm using the [Star Wars API](https://swapi.dev/). This API is and open REST API which means you don't need a key to access it. But because it's free you only get 10.000 requests per day. That's still a lot of requests but there is a limit. <br>
@@ -91,32 +138,6 @@ Response example:
 ```
 
 Each catogory has specific attributes. Because that's a really long list I'll refer to the [documentation](https://swapi.dev/documentation) of the API.
-
-## :electric_plug: Installation
-
-Go to the right directory:
-
-```
-cd yourDirectory
-```
-
-Clone repo:
-
-```
-git clone https://github.com/mbergevoet/web-app-from-scratch-2021.git
-```
-
-Once cloned:
-
-```
-npm install
-```
-
-Once all dependencies are installed:
-
-```
-npm run dev
-```
 
 ## :bookmark_tabs: License
 
