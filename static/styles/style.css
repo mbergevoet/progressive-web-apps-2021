@@ -99,10 +99,9 @@ body {
 }
 
 main > h1 {
-	color: var(--holoblue);
-	filter: var(--dropshadow);
+	color: white;
 	font-size: 3em;
-	margin: 1em 10%;
+	margin: 2em 8%;
 }
 
 #starWarsFilms {
@@ -262,7 +261,7 @@ main > h1 {
 #starWarsStarships article p,
 #starWarsPlanets article p {
 	margin: 1em 0;
-	width: 80%;
+	width: 100%;
 	color: var(--holoblue);
 	font-size: 1.3em;
 	font-style: italic;

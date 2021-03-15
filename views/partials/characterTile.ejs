@@ -1,40 +1,40 @@
-<% for (var index=0; index < data.length; index++) { %>
+<% characters.map(character=> { %>
     <article>
         <h2>
-            <%= data[index].name %>
+            <%= character.name %>
         </h2>
         <img src="/images/character-icon.png" alt="placeholder icon">
         <div>
             <p>
                 Height: <span>
-                    -=<%= data[index].height %>=-
+                    -=<%= character.height %>=-
                 </span>
             </p>
             <p>
                 Gender: <span>
-                    -=<%= data[index].gender %>=-
+                    -=<%= character.gender %>=-
                 </span>
             </p>
             <p>
                 Eye Color: <span>
-                    -=<%= data[index].eye_color %>=-
+                    -=<%= character.eye_color %>=-
                 </span>
             </p>
             <p>
                 Hair Color: <span>
-                    -=<%= data[index].hair_color %>=-
+                    -=<%= character.hair_color %>=-
                 </span>
             </p>
             <p>
                 Year of Birth: <span>
-                    -=<%= data[index].birth_year %>=-
+                    -=<%= character.birth_year %>=-
                 </span>
             </p>
             <p>
                 Weight: <span>
-                    -=<%= data[index].mass %>=-
+                    -=<%= character.mass %>=-
                 </span>
             </p>
         </div>
     </article>
-    <% } %>
+    <% }) %>

@@ -48,13 +48,22 @@ npm run dev
 ```
 
 ## npm scripts
+>The "scripts" property of your package.json file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts. These all can be executed by running `npm run-script <stage>` or npm run <stage> for short.
 
-These are commands you type in the commandline to make specific parts of the code trigger
+For now I have two scripts. The first one is for starting the appliaction when it is deployed, the second one is just for the server to automaticly restart once changed are made and is just used for development purposes (hence the name dev).
 ```
 npm start
 ```
 ```
 npm run dev
+```
+
+In my package.json it looks like this:
+```js
+"scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+}
 ```
 
 ## npm packages

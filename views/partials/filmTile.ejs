@@ -1,11 +1,11 @@
-<% for (var index=0; index < data.length; index++) { %>
+<% for (var index=0; index < films.length; index++) { %>
     <a href="/films/<%= index + 1 %>">
         <article>
             <h1>
-                <%= data[index].title %>
+                <%= films[index].title %>
             </h1>
             <p>
-                <%= data[index].opening_crawl %>
+                <%= films[index].opening_crawl %>
             </p>
         </article>
     </a>
