@@ -48,7 +48,9 @@ npm run dev
 ```
 
 ## npm scripts
->The "scripts" property of your package.json file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts. These all can be executed by running `npm run-script <stage>` or npm run <stage> for short.
+>The "scripts" property of your package.json file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts. These all can be executed by running `npm run-script <stage>` or `npm run` for short.
+<br>
+[source](https://docs.npmjs.com/cli/v7/using-npm/scripts)
 
 For now I have two scripts. The first one is for starting the appliaction when it is deployed, the second one is just for the server to automaticly restart once changed are made and is just used for development purposes (hence the name dev).
 ```

@@ -39,6 +39,7 @@ app
                 const starships = swData.starships
 
                 async function test() {
+                    // Promise.all(characters, planets, starships)
                     let characterResponse = await getDetailData(characters)
                     // let planetResponse = await getDetailData(planets)
                     // let starshipResponse = await getDetailData(starships)
