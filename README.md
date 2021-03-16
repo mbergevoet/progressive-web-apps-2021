@@ -166,6 +166,8 @@ Each catogory has specific attributes. Because that's a really long list I'll re
 
 ## :bookmark_tabs: License
 
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
 > This repository uses [MIT](https://github.com/mbergevoet/iCOV-redesign/blob/master/LICENSE) license. © Merlijn Bergevoet 2021
 
 <!-- ☝️ replace this description with a description of your own work -->

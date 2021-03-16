@@ -1,7 +1,5 @@
 // Dependencies
-
 require('dotenv').config()
-
 const http = require('http')
 const express = require('express')
 const app = express()
@@ -11,7 +9,6 @@ const fetch = require('node-fetch')
 
 const swFilmsUrl = "https://swapi.dev/api/films"
 const detailUrl = "https://swapi.dev/api/films/"
-const movieIdFix = [0, 4, 5, 6, 1, 2, 3]
 
 const { getDetailData } = require('./static/scripts/api.js')
 
@@ -30,7 +27,7 @@ app
             })
     })
     .get('/films/:id', (req, res) => {
-        fetch(detailUrl + movieIdFix[req.params.id])
+        fetch(detailUrl + req.params.id)
             .then((response) => {
                 const swApiResponse = response.json()
                 return swApiResponse;

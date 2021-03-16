@@ -1,5 +1,5 @@
-<% for (var index=0; index < films.length; index++) { %>
-    <a href="/films/<%= index + 1 %>">
+<% const movieIdFix=[ 1, 2, 3, 4, 5, 6]; for (var index=0; index < films.length; index++) { %>
+    <a href="/films/<%= movieIdFix[index] %>">
         <article>
             <h1>
                 <%= films[index].title %>
