@@ -1,8 +1,10 @@
 // Dependencies
+
+require('dotenv').config()
+
 const http = require('http')
 const express = require('express')
 const app = express()
-require('dotenv').config()
 const port = process.env.PORT
 const path = require('path')
 const fetch = require('node-fetch')
@@ -27,33 +29,28 @@ app
                 res.render('pages/index.ejs', { films: swData.results })
             })
     })
-    // Detail Route
     .get('/films/:id', (req, res) => {
         fetch(detailUrl + movieIdFix[req.params.id])
             .then((response) => {
-                const swApiResponse = response.json();
+                const swApiResponse = response.json()
                 return swApiResponse;
             })
             .then((swData) => {
                 const characters = swData.characters
-                const planets = swData.planets
                 const starships = swData.starships
+                const planets = swData.planets
 
-                async function test() {
-                    // Promise.all(characters, planets, starships)
-                    let characterResponse = await getDetailData(characters)
-                    // let planetResponse = await getDetailData(planets)
-                    // let starshipResponse = await getDetailData(starships)
-                    return characterResponse;
-                }
-                return test()
+                Promise.all([
+                    getDetailData(characters),
+                    getDetailData(starships),
+                    getDetailData(planets)
+                ])
+                    .then(([characterData, starshipData, planetData]) => {
+                        // console.log(characterData, starshipData, planetData)
+                        res.render('pages/detail.ejs', { characters: characterData, starships: starshipData, planets: planetData })
+                    })
             })
-            .then((characterData) => {
-                // console.log(characterData)
-                res.render('pages/detail.ejs', { characters: characterData })
-            })
-    });
-
-app.listen(port, function () {
-    console.log(`Server listening at http://localhost:${port}`)
-});
+    })
+    .listen(port, function () {
+        console.log(`Server listening at http://localhost:${port}`)
+    })

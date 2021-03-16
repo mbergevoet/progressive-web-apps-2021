@@ -26,6 +26,9 @@ In this course I will convert the client side web application I made previously 
 ## :flower_playing_cards: Project poster
 
 ![Project Poster](https://i.imgur.com/LZ7lU3m.png)
+
+<br>
+
 ![Project Poster 2](https://i.imgur.com/irPslPz.png)
 
 ## :computer: Live demo

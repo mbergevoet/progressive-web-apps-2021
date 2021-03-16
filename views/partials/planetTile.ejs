@@ -1,29 +1,52 @@
-<article>
-    <h2>
-        <%= data[index].name %>
-    </h2>
-    <img src="../../static/assets/planet-icon.png" alt="placeholder icon">
-    <div>
-        <p>
-            <%= data[index].climate %>
-        </p>
-        <p>
-            <%= data[index].population %>
-        </p>
-        <p>
-            <%= data[index].gravity %>
-        </p>
-        <p>
-            <%= data[index].orbital_period %>
-        </p>
-        <p>
-            <%= data[index].rotation_period %>
-        </p>
-        <p>
-            <%= data[index].diameter %>
-        </p>
-        <p>
-            <%= data[index].terrain %>
-        </p>
-    </div>
-</article>
+<% planets.map(planet=> { %>
+    <article>
+        <h2>
+            <%= planet.name %>
+        </h2>
+        <img src="/images/planet-icon.png" alt="placeholder icon">
+        <div>
+            <p>
+                Climate:
+                <span>
+                    -=<%= planet.climate %>=-
+                </span>
+            </p>
+            <p>
+                Population:
+                <span>
+                    -=<%= planet.population %>=-
+                </span>
+            </p>
+            <p>
+                Gravity:
+                <span>
+                    -=<%= planet.gravity %>=-
+                </span>
+            </p>
+            <p>
+                Orbital Period:
+                <span>
+                    -=<%= planet.orbital_period %> days=-
+                </span>
+            </p>
+            <p>
+                Rotational Period:
+                <span>
+                    -=<%= planet.rotation_period %>h=-
+                </span>
+            </p>
+            <p>
+                Diameter:
+                <span>
+                    -=<%= planet.diameter %>km=-
+                </span>
+            </p>
+            <p>
+                Terrain:
+                <span>
+                    -=<%= planet.terrain %>=-
+                </span>
+            </p>
+        </div>
+    </article>
+    <% }) %>

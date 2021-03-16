@@ -1,29 +1,46 @@
-<article>
-    <h2>
-        <%= data[index].name %>
-    </h2>
-    <img src="../../static/assets/starship-icon.png" alt="placeholder icon">
-    <div>
-        <p>
-            <%= data[index].length %>
-        </p>
-        <p>
-            <%= data[index].crew %>
-        </p>
-        <p>
-            <%= data[index].passengers %>
-        </p>
-        <p>
-            <%= data[index].manufacturer %>
-        </p>
-        <p>
-            <%= data[index].model %>
-        </p>
-        <p>
-            <%= data[index].class %>
-        </p>
-        <p>
-            <%= data[index].max_atmosphering_speed %>
-        </p>
-    </div>
-</article>
+<% starships.map(starship=> { %>
+    <article>
+        <h2>
+            <%= starship.name %>
+        </h2>
+        <img src="/images/starship-icon.png" alt="placeholder icon">
+        <div>
+            <p>
+                Length:
+                <span>
+                    -=<%= starship.length %>m=-
+                </span>
+            </p>
+            <p>
+                Crew:
+                <span>
+                    -=<%= starship.crew %>=-
+                </span>
+            </p>
+            <p>
+                Passangers:
+                <span>
+                    -=<%= starship.passengers %>=-
+                </span>
+            </p>
+            <p>
+                Manufacturer:
+                <span>
+                    -=<%= starship.manufacturer %>=-
+                </span>
+            </p>
+            <p>
+                Model:
+                <span>
+                    -=<%= starship.model %>=-
+                </span>
+            </p>
+            <p>
+                Speed:
+                <span>
+                    -=<%= starship.max_atmosphering_speed %>=-
+                </span>
+            </p>
+        </div>
+    </article>
+    <% }) %>
