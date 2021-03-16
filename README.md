@@ -19,7 +19,7 @@ In this course I will convert the client side web application I made previously 
 
 ## :computer: Demo Link
 
-[Link to live Demo](mbergevoet.github.io/progressive-web-apps-2021/)
+[Link to deployed Heroku app](https://star-wars-webapp.herokuapp.com/)
 
 ## :electric_plug: Installation
 
@@ -47,7 +47,7 @@ Once all dependencies are installed:
 npm run dev
 ```
 
-## npm scripts
+## :black_nib: npm scripts
 >The "scripts" property of your package.json file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts. These all can be executed by running `npm run-script <stage>` or `npm run` for short.
 <br>
 [source](https://docs.npmjs.com/cli/v7/using-npm/scripts)
@@ -68,7 +68,7 @@ In my package.json it looks like this:
 }
 ```
 
-## npm packages
+## :package: npm packages
 
 **[express](https://www.npmjs.com/package/express)** <br>
 Fast, unopinionated, minimalist web framework for node.
