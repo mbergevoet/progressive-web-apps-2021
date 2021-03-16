@@ -2,6 +2,16 @@
 
 In this course I will convert the client side web application I made previously in the Web App From Scratch course into a server side rendered application. I will also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately I am going to implement a series of optimisations to improve the performance of the application.
 
+## Table of contents
+* Learning goald
+* Project poster
+* Live demo
+* Installation
+* npm scripts
+* npm packages
+* About the API
+* License
+
 ## :mortar_board: Learning goals
 
 -   _You understand the difference between client side and server side rendering and you can apply server side rendering
@@ -16,8 +26,9 @@ In this course I will convert the client side web application I made previously 
 ## :flower_playing_cards: Project poster
 
 ![Project Poster](https://i.imgur.com/LZ7lU3m.png)
+![Project Poster 2](https://i.imgur.com/irPslPz.png)
 
-## :computer: Demo Link
+## :computer: Live demo
 
 [Link to deployed Heroku app](https://star-wars-webapp.herokuapp.com/)
 
