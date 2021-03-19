@@ -1,8 +1,8 @@
 const CACHE_NAME = 'v1'
 const URLS_TO_CACHE = [
-    'main.js',
+    '/main.js',
     '/styles/style.css',
-    // '../views/pages/offline.ejs'
+    '/offline'
 ];
 
 // source: https://www.youtube.com/watch?v=ksXwaWHCW6k
@@ -41,5 +41,12 @@ self.addEventListener('activate', event => {
 // Showing offline page if offline
 self.addEventListener('fetch', event => {
     console.log('service worker fetching')
-    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)))
+
+    event.respondWith(
+        fetch(event.request)
+            .catch(() => {
+                return caches.open(CACHE_NAME)
+                    .then(cache => cache.match('/offline'))
+            })
+    )
 })
