@@ -47,9 +47,9 @@ app
                         res.render('pages/detail.ejs', { characters: characterData, starships: starshipData, planets: planetData })
                     })
             })
-            .get('/offline', (req, res) => {
-                res.render('pages/offline.ejs')
-            })
+    })
+    .get('/offline', (req, res) => {
+        res.render('pages/offline.ejs')
     })
     .listen(port, function () {
         console.log(`Server listening at http://localhost:${port}`)
