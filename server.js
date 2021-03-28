@@ -1,6 +1,6 @@
 // Dependencies
 require('dotenv').config()
-const http = require('http')
+const compression = require('compression')
 const express = require('express')
 const app = express()
 const port = process.env.PORT
@@ -14,6 +14,7 @@ const { getDetailData } = require('./static/scripts/api.js')
 
 app
     .use(express.static(`${__dirname}/static`))
+    .use(compression())
     .set('view engine', 'ejs')
     .set('views', path.join(`${__dirname}/views`))
     .get('/', (req, res) => {
@@ -43,7 +44,6 @@ app
                     getDetailData(planets)
                 ])
                     .then(([characterData, starshipData, planetData]) => {
-                        // console.log(characterData, starshipData, planetData)
                         res.render('pages/detail.ejs', { characters: characterData, starships: starshipData, planets: planetData })
                     })
             })

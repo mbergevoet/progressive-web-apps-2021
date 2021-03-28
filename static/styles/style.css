@@ -34,7 +34,7 @@ header {
 	height: auto;
 	width: 100vw;
 	background-color: var(--secondary);
-	background-image: url(../images/starsbackgroundtransparent.png);
+	background-image: url(../images/stars.webp);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -98,14 +98,18 @@ body {
 	background-color: black;
 }
 
+main {
+	background-color: #1d1f20;
+	padding-bottom: 5vh;
+}
+
 main > h1 {
 	color: white;
 	font-size: 3em;
-	margin: 2em 8%;
+	padding: 2em 8%;
 }
 
 #starWarsFilms {
-	background-color: #1d1f20;
 	padding: 10vh 10vw 20vh;
 	display: flex;
 	flex-direction: row;
@@ -202,12 +206,12 @@ main > h1 {
 }
 
 #starWarsCharacters article {
-	width: 20%;
+	width: 80%;
 }
 
 #starWarsStarships article,
 #starWarsPlanets article {
-	width: 30%;
+	width: 80%;
 }
 
 #starWarsCharacters article img,
@@ -287,6 +291,7 @@ main > h1 {
 #starWarsStarships article p span,
 #starWarsPlanets article p span{
 	font-size: 1.1em;
+	display: block;
 }
 
 
@@ -334,3 +339,61 @@ footer p {
 .loader img {
 	width: 200px;
 }
+
+@media screen and (min-width: 480px) {
+
+	#starWarsCharacters article p span,
+	#starWarsStarships article p span,
+	#starWarsPlanets article p span	{
+		display: inline;
+	}
+}
+
+@media screen and (min-width: 728px) {
+
+	#starWarsCharacters article {
+		width: 60%;
+	}
+
+	#starWarsStarships article,
+	#starWarsPlanets article {
+		width: 60%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	#starWarsCharacters > article,
+	#starWarsStarships > article,
+	#starWarsPlanets > article {
+		margin: 1em;
+		padding: 1em;
+	}
+
+	#starWarsCharacters article {
+		width: 30%;
+	}
+	
+	#starWarsStarships article,
+	#starWarsPlanets article {
+		width: 40%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	#starWarsCharacters > article,
+	#starWarsStarships > article,
+	#starWarsPlanets > article {
+		margin: 1em;
+		padding: 2em;
+	}
+
+	#starWarsCharacters article {
+		width: 20%;
+	}
+	
+	#starWarsStarships article,
+	#starWarsPlanets article {
+		width: 30%;
+	}
+}
+
