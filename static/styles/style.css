@@ -1,6 +1,8 @@
 :root {
 	--primary: #fff;
 	--secondary: #000;
+	--dropshadow: drop-shadow(1px 4px 4px rgb(36, 36, 209));
+	--holoblue: #217dba;
 }
 
 @font-face {
@@ -11,11 +13,6 @@
 @font-face {
 	font-family: 'CrawlBody';
 	src: url('../fonts/SWCrawlBody.ttf');
-}
-
-:root {
-	--dropshadow: drop-shadow(1px 4px 4px rgb(36, 36, 209));
-	--holoblue: #217dba;
 }
 
 * {
