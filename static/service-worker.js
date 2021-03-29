@@ -43,6 +43,7 @@ self.addEventListener('activate', event => {
 // Showing offline page if offline
 self.addEventListener('fetch', event => {
     console.log('service worker fetching')
+
     // Verschillende event.requests uitlezen en 
     // if (event.request.method === 'GET') {
     // event.waitUntil(caches.open('offline-cache-name').then(function (cache) {
@@ -57,22 +58,29 @@ self.addEventListener('fetch', event => {
     // )
 
     // }
-    event.respondWith(
-        caches.open(CACHE_NAME).then(cache => {
-            return cache.match(event.request)
-                .then(response => {
-                    if (response) {
-                        return response
-                    }
-                    return fetch(event.request)
+
+    // --------------------------------------------------------------------
+    if (event.request.method === 'GET') {
+        event.respondWith(
+            caches.open(CACHE_NAME)
+                .then(cache => {
+                    return cache.match(event.request)
                         .then(response => {
-                            cache.put(event.request, response.clone())
-                            return response
+                            if (response) {
+                                return response
+                            }
+                            return fetch(event.request)
+                                .then(response => {
+                                    cache.put(event.request, response.clone())
+                                    return response
+                                })
                         })
-                }).catch((err) => {
-                    return caches.open(CACHE_NAME)
-                        .then(cache => cache.match(CORE_ASSATES[4]))
+                        .catch((error) => {
+                            return caches.open(CACHE_NAME)
+                                .then(cache => cache.match('/offline'))
+                        })
                 })
-        })
-    )
+        )
+    }
+    // --------------------------------------------------------------------
 })

@@ -101,9 +101,11 @@ main {
 }
 
 main > h1 {
+	padding: 1.5em 8%;
 	color: white;
-	font-size: 3em;
-	padding: 2em 8%;
+	font-family: 'CrawlTitle', sans-serif;
+	font-size: 4em;
+	letter-spacing: 2px;
 }
 
 #starWarsFilms {
