@@ -23,7 +23,7 @@ self.addEventListener('install', event => {
     )
 })
 
-// Clear old caches
+// Clear old caches if CACHE_NAME changes
 self.addEventListener('activate', event => {
     console.log('service worker activated')
     event.waitUntil(
@@ -43,23 +43,6 @@ self.addEventListener('activate', event => {
 // Showing offline page if offline
 self.addEventListener('fetch', event => {
     console.log('service worker fetching')
-
-    // Verschillende event.requests uitlezen en 
-    // if (event.request.method === 'GET') {
-    // event.waitUntil(caches.open('offline-cache-name').then(function (cache) {
-    //     return cache.addAll(CORE_ASSATES);
-    // }
-    // event.respondWith(
-    //     fetch(event.request)
-    //         .catch(() => {
-    //             return caches.open(CACHE_NAME)
-    //                 .then(cache => cache.match(CORE_ASSATES[4]))
-    //         })
-    // )
-
-    // }
-
-    // --------------------------------------------------------------------
     if (event.request.method === 'GET') {
         event.respondWith(
             caches.open(CACHE_NAME)
@@ -82,5 +65,4 @@ self.addEventListener('fetch', event => {
                 })
         )
     }
-    // --------------------------------------------------------------------
 })
